@@ -7,7 +7,7 @@ data class Contract(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id:Long,
+    val id:Long? =null,
 
     @ManyToOne
     @JoinColumn(name="healthCareId")

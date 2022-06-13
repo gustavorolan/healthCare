@@ -1,5 +1,6 @@
 package com.healthCare.api.controller.response
 
-class HealthCarePlanResponse (
+data class HealthCarePlanResponse (
   val id:Long,
+  val userAccountResponse: UserAccountResponse
 )

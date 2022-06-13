@@ -1,4 +1,4 @@
-package com.healthCare.api.service.user
+package com.healthCare.api.user
 
 import com.healthCare.api.controller.response.UserAccountResponse
 import com.healthCare.api.mapper.UserMapper

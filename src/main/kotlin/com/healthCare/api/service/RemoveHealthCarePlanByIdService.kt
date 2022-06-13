@@ -13,12 +13,14 @@ class RemoveHealthCarePlanByIdService (
     private val healthCarePlanFinder: HealthCarePlanFinder,
     private val verifyIfPlanStillBeingUsed: VerifyIfPlanStillBeingUsed,
     private val healthCarePlanMapper: HealthCarePlanMapper,
-    private val healthCarePlanRepository: HealthCarePlanRepository
+    private val healthCarePlanRepository: HealthCarePlanRepository,
+    private val verifyIfAuthorIsUserLogged: VerifyIfAuthorIsUserLogged
         ){
     fun delete(id: Long): HealthCarePlanResponse {
         val healthCarePlan = healthCarePlanFinder.findByid(id)
         val findContractsByHealthCarePlan = contractRepository.findAllByHealthCarePlan(healthCarePlan)
         verifyIfPlanStillBeingUsed.verify(findContractsByHealthCarePlan)
+        verifyIfAuthorIsUserLogged.verify(healthCarePlan.author)
         healthCarePlanRepository.delete(healthCarePlan)
         return healthCarePlanMapper.toResponse(healthCarePlan)
     }

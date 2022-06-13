@@ -1,4 +1,4 @@
-package com.healthCare.api.service.user
+package com.healthCare.api.user
 
 import com.healthCare.api.controller.request.CreateNewUserRequest
 import com.healthCare.api.model.UserAccount

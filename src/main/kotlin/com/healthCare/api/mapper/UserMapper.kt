@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component
 @Component
 class UserMapper {
     fun toResponse(user: UserAccount): UserAccountResponse {
-        return UserAccountResponse(user.email,user.id)
+        return UserAccountResponse(
+            email = user.email,
+            id = user.id)
     }
 }

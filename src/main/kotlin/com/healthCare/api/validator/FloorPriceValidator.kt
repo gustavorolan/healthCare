@@ -12,6 +12,6 @@ class FloorPriceValidator {
 
     fun verify(requestFloorPrice:BigDecimal){
         if (requestFloorPrice<LOWEST_BASE_PRICE)
-            throw ResponseStatusException(HttpStatus.BAD_REQUEST, "Value is lower than one hundread")
+            throw ResponseStatusException(HttpStatus.BAD_REQUEST, "Value is lower than one hundred")
     }
 }

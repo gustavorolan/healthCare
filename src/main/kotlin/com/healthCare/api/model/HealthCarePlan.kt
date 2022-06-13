@@ -4,13 +4,13 @@ import java.math.BigDecimal
 import javax.persistence.*
 import javax.persistence.GenerationType.IDENTITY
 
+
 @Entity
 data class HealthCarePlan(
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    @Column(unique = true)
-    val id:Long,
+    var id:Long,
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -27,7 +27,11 @@ data class HealthCarePlan(
     var airlift:Boolean,
 
     @Column(nullable = false)
-    var floorPrice: BigDecimal
+    var floorPrice: BigDecimal,
+
+    @ManyToOne
+    @JoinColumn(name = "authorId")
+    val author: UserAccount
 
     )
 

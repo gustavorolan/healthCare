@@ -2,8 +2,8 @@ package com.healthCare.api.controller
 
 import com.healthCare.api.controller.request.CreateNewUserRequest
 import com.healthCare.api.controller.response.UserAccountResponse
-import com.healthCare.api.service.user.CreateNewUserService
-import com.healthCare.api.service.user.GetUserService
+import com.healthCare.api.user.CreateNewUserService
+import com.healthCare.api.user.GetUserService
 import org.springframework.web.bind.annotation.*
 import javax.validation.Valid
 
@@ -20,7 +20,7 @@ class UserAccountController (
     }
 
     @GetMapping("/me")
-    fun get(): UserAccountResponse? {
+    fun get(): UserAccountResponse {
         return getUserService.get()
     }
 }
