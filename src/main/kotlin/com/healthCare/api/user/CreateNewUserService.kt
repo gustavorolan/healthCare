@@ -13,13 +13,16 @@ import javax.validation.constraints.Null
 class CreateNewUserService (
     private val userAccountRepository: UserAccountRepository,
     private val passwordEncoder: PasswordEncoder,
-    private val permissionRepository: PermissionRepository
     ){
   
     fun create(request: CreateNewUserRequest) {
         val passwordEncoded = passwordEncoder.encode(request.password)
-
-        val userAccount = UserAccount(request.id,request.email,passwordEncoded, arrayListOf())
+        val userAccount = UserAccount(
+            id=request.id,
+            email=request.email,
+            password = passwordEncoded,
+            permissionList =  arrayListOf()
+        )
         userAccountRepository.save(userAccount)
     }
 

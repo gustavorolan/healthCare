@@ -13,7 +13,6 @@ class FindUserAuthenticatedService(
 
     fun getUser(): UserAccount {
         val authentication = SecurityContextHolder.getContext().authentication
-        println(authentication.principal)
         val securityUser = authentication.principal as SecurityUser
         return userAccountRepository.findById(securityUser.id).get()
     }
