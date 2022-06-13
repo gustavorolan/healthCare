@@ -7,8 +7,8 @@ import com.healthCare.api.user.FindUserAuthenticatedService
 import com.healthCare.api.utils.HealthCarePlanFactory
 import com.healthCare.api.utils.UserAccountFactory
 import com.healthCare.api.validator.FloorPriceValidator
-import org.junit.Test
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 import org.mockito.ArgumentCaptor
 import org.mockito.Mockito
 
